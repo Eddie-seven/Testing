@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>404 | Testing</title>
+<meta charset="utf8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<style type="text/css">
+*{
+margin: 0;
+padding: 0;
+transition: 1s;
+}
+body{
+background: black;
+color: white;
+height: 100vh;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+body main{
+width:96%;
+height:max-content;
+position:relative;
+z-index: 10;
+}
+@keyframes sgow{
+from{
+opacity:0;
+transform:translateY(50%);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+body main p{
+animation:sgow 1.3s linear;
+margin: 5% 0;
+font-size: 110%;
+color: #eee;
+text-align:left;
+line-height: 1.4;
+font-weight:400;
+font-family: 'Inter', sans-serif;
+text-shadow: 0 0 2pt black;
+}
+body main h1{
+transition:1s;
+animation:sgow 1s linear;
+
+letter-spacing:3pt;
+color: black;
+font-size: 3rem;
+text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+body main button{
+animation:sgow 1.5s linear;
+background: black;
+border: 1pt solid white;
+color: white;
+padding: 5% 4%;
+border-radius:21pt;
+margin-top:7%;
+}
+body main button.b1{
+transition:500ms;
+background:white;
+font-weight:700;
+border: none;
+color:black;
+animation: col 1s linear;
+}
+@keyframes col{
+from{
+background: linear-gradient(45deg,white,white);
+background-size:100% 0%;
+}
+to{
+background: linear-gradient(180deg,white,white) ;
+background-size: 100% 100%;
+}
+}
+.effect{
+height: 20vh;
+width: 20vh;
+border: 1pt solid white;
+border-radius: 50%;
+background: transparent;
+position:fixed;
+z-index:0;
+animation: win 2s linear;
+}
+@keyframes win{
+0%, 50%{
+height: 0;
+width: 0;
+border-radius: 50%;
+}
+100%{
+height: 20vh;
+width: 20vh;
+border-radius: 50%;
+}
+}
+#one{
+transition:1s;
+right:-10%;
+top:-10%;
+}
+#two{
+transition:1s;
+left:-10%;
+bottom:-10%;
+}
+#tree{
+right:10%;
+bottom:10%;
+border-width:3pt;
+opacity:0.6;
+transform:scale(0.5,0.5);
+}
+</style>
+</head>
+<body>
+<main>
+<h1>NOTFOUND PAGE</h1>
+<p>Está pagina está sem fundo para o acesso
+por favor clique no botão abaixo para aceder
+uma pagina principal, que lhe permite desfrutar
+das enumeras possiblidades da App</p>
+<button onclick="location.href=location.origin">pagina principal</button>
+</main>
+<aside id="one" class="effect"></aside>
+<aside id="two" class="effect"></aside>
+<aside id="tree" class="effect"></aside>
+</body>
+<script type="text/javascript">
+setTimeout(()=>{
+document.querySelector("button").className="b1"
+setTimeout(()=>{
+document.querySelector("h1").style.color = "white"
+}, 1500 )
+}, 3000 )
+
+</script>
+</html>
